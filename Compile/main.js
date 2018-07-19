@@ -1,7 +1,6 @@
+"use strict";
 // import {JDM} from './JDM';
-
 // let Sample = new JDM('Sample.json');
-
 // //get Something in Sample
 // Sample.get({"name": "sepehr"});
 // Sample.get("sepehr");
@@ -14,7 +13,6 @@
 //     "code": "c++"
 // }
 // */
-
 // //post Something in Sample
 // Sample.post({
 //     "kasra": {
@@ -24,15 +22,11 @@
 //         "code": "matlab"
 //     }
 // });
-
-
 // //delete Somthing in Sample
 // Sample.delete({"name": "sepehr"});
 // Sample.delete("sepehr");
 // Sample.delete([0]);
 // Sample.delete("sepehr" , "id");
-
-
 // //update Somthing in Sample
 // Sample.update({
 //     "reza": {
