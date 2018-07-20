@@ -3,7 +3,7 @@ This project about new database using json format and you can use in **front-end
 Also it simple to **crypt** and **uncrypt** your code in database.
 >and best thing of this project you support css,html,js,java,... all language
 
-This Project Have Five Step
+This Project Have Four Step
 ------------------------------
 * First step about importing json to `js` or `ts` format
 * Second step about crypt database for best security
@@ -27,4 +27,4 @@ Steps | First Step | Second Step | Third step | Fourth step
 ------| ---------- | ----------- | ---------- | -----------
 Completed | %30 | False | False | False
 
-I Hope Enjoy Project And Help Me To Completed It Sooon
+I Hope To Enjoy Project And Help Me To Completed It Sooon
