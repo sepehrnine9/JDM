@@ -1,15 +1,20 @@
 import fs from 'fs';
 import {promisify} from 'util';
+import {Helper} from './Helper';
 
 interface dbManager {
     which(something: string): void;
-    get(something?: any): any;
-    post(something: any): string;
-    delete(something: any, property ? : any): string;
+    get(something ? : any): any;
+    post(something: any): any;
+    delete(something: any, property ?: any): string;
     update(something: object, whichOne: any): string;
 }
 
-export class JDM implements dbManager {
+let obj: {db: any} = {
+    db: []
+}
+
+export class JDM extends Helper implements dbManager  {
 
     private jsonUrl: string = '';
 
@@ -17,24 +22,22 @@ export class JDM implements dbManager {
         this.jsonUrl = something;
     }
 
-    public get(something?: any): any {
-        let value = JSON.parse(something);
-        console.log(value);
+    public get(something ?: any): any {
         const readFileAsync = promisify(fs.readFile);
-        readFileAsync(`${__dirname}/${this.jsonUrl}`, {
-                encoding: 'utf8'
-            })
+        readFileAsync(`${__dirname}/${this.jsonUrl}`, {encoding: 'utf8'})
             .then(contents => {
                 const obj = JSON.parse(contents);
-                console.log(typeof obj);
+                return obj;
             })
             .catch(error => {
                 throw error
             });
     }
 
-    public post(something: any): string {
-        return '';
+    public post(something: any): any {
+        obj.db.push(something);
+        const json = JSON.stringify(obj);
+        fs.createWriteStream(`${this.jsonUrl}` , json);
     }
 
     public delete(something: any, property ? : any): string {
